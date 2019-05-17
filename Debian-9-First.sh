@@ -115,5 +115,12 @@ sudo service procps reload
 echo -e "${GREEN}Updating Server"
 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get dist-upgrade -y; apt-get autoremove -y; apt-get autoclean -y' &> /dev/null
 
+echo -e "${GREEN}Configuring Unnattended Upgrades"
+sudo apt-get install unattended-upgrades &> /dev/null
+echo 'Unattended-Upgrade::Remove-Unused-Dependencies "true";' >> /etc/apt/apt.conf.d/50unattended-upgrades &> /dev/null
+echo 'Unattended-Upgrade::MailOnlyOnError "true";' >> /etc/apt/apt.conf.d/50unattended-upgrades &> /dev/null
+echo 'Unattended-Upgrade::Automatic-Reboot "true";' >> /etc/apt/apt.conf.d/50unattended-upgrades &> /dev/null
+echo 'Unattended-Upgrade::Automatic-Reboot-Time "03:00";' >> /etc/apt/apt.conf.d/50unattended-upgrades &> /dev/null
+
 echo -e "${GREENBLINK}Rebooting Server!${NOCOLOR}"
 sudo reboot
