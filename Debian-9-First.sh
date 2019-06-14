@@ -13,9 +13,8 @@
 #######################################
 #       Login to root account or      #
 #    run "su -" on a normal account   #
-#           wget this script          #
-#               chmod +x              #
-#         then run ./Debian...        #
+#        run the following line       #
+# wget https://raw.githubusercontent.com/UbzyHD/Debian-9-Scripts/master/Debian-9-First.sh; chmod +x Debian-9-First.sh; ./Debian-9-First.sh; #
 #######################################
 
 #######################################
