@@ -103,9 +103,6 @@ net.ipv4.conf.default.log_martians = 1
 # Ignore ICMP redirects
 net.ipv4.conf.all.accept_redirects = 0
 net.ipv4.conf.default.accept_redirects = 0
-
-# Ignore Directed pings
-net.ipv4.icmp_echo_ignore_all = 1
 EOF
 sudo sysctl -p
 sudo sysctl --system
