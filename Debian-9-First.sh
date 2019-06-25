@@ -32,16 +32,16 @@ USER=ubzy                          #
 ####################################
 
 echo -e "${GREEN}Installing Sudo"
-apt-get install sudo -y &> /dev/null
+apt install sudo -y &> /dev/null
 
 echo -e "${GREEN}Adding $USER to Sudo group"
 usermod -aG sudo $USER
 
 echo -e "${GREEN}Updating Server"
-sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get dist-upgrade -y; apt-get autoremove -y; apt-get autoclean -y' &> /dev/null
+sudo -- sh -c 'apt update; apt upgrade -y; apt dist-upgrade -y; apt autoremove -y; apt autoclean -y' &> /dev/null
 
 echo -e "${GREEN}Installing Open-VM-Tools"
-sudo apt-get install open-vm-tools -y &> /dev/null
+sudo apt install open-vm-tools -y &> /dev/null
 
 echo -e "Changing GRUB Timeout"
 File=/etc/default/grub
@@ -109,10 +109,10 @@ sudo sysctl --system
 sudo service procps reload
 
 echo -e "${GREEN}Updating Server"
-sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get dist-upgrade -y; apt-get autoremove -y; apt-get autoclean -y' &> /dev/null
+sudo -- sh -c 'apt update; apt upgrade -y; apt dist-upgrade -y; apt autoremove -y; apt autoclean -y' &> /dev/null
 
 echo -e "${GREEN}Configuring Unnattended Upgrades"
-sudo apt-get install unattended-upgrades &> /dev/null
+sudo apt install unattended-upgrades -y &> /dev/null
 echo 'Unattended-Upgrade::Remove-Unused-Dependencies "true";' >> /etc/apt/apt.conf.d/50unattended-upgrades &> /dev/null
 echo 'Unattended-Upgrade::MailOnlyOnError "true";' >> /etc/apt/apt.conf.d/50unattended-upgrades &> /dev/null
 echo 'Unattended-Upgrade::Automatic-Reboot "true";' >> /etc/apt/apt.conf.d/50unattended-upgrades &> /dev/null
