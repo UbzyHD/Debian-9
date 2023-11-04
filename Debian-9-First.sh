@@ -28,7 +28,7 @@ NOCOLOR="\033[0m"                     #
 ####################################
 #   User Variables (change these)  #
 ####################################
-USER=ubaidulislam                  #
+USER=ubaidulislam                  ##
 ####################################
 
 echo -e "${GREEN}Installing Sudo"
